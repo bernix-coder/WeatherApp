@@ -25,7 +25,7 @@ function Login() {
                        </div>
                        
                         <div>
-                        <i class="fa fa-lock" aria-hidden="true"></i>
+                        <i className="fa fa-lock" aria-hidden="true"></i>
                             <input type='password' placeholder='Password'/>
                      
                      
@@ -38,8 +38,8 @@ function Login() {
                        <div className='media'>
                        Or login with 
                         <i className="fa fa-facebook-square" aria-hidden="true"></i>
-                        <i class="fa fa-twitter-square" aria-hidden="true"></i>
-                        <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+                        <i className="fa fa-twitter-square" aria-hidden="true"></i>
+                        <i className="fa fa-google-plus-square" aria-hidden="true"></i>
                     </div>
                     </form>
                   
