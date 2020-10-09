@@ -1,0 +1,57 @@
+*{
+    box-sizing: border-box;
+    width: 100%;
+   
+}
+
+.main{
+    background: url(../images/rain.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 595px;
+    
+}
+
+
+
+
+.form-container{
+  margin: auto 0;
+  padding-left: 550px;
+  padding-top: 50px;
+}
+
+h2{
+    font-size: 30px;
+}
+
+input[type=text],input[type=password],input[type=email]{
+   border: none;
+    outline: none;
+    border-bottom: 1px solid #dbd3d3;
+    padding: 15px 5px;
+    width: 300px;
+    border-radius: 10px;
+
+   
+
+}
+
+button{
+    outline: none;
+    color: white;
+   cursor: pointer;
+    background-color: #274BC8;
+    outline: none;
+    border-radius: 10px;
+    width: 300px;
+    height: 40px;
+}
+
+
+.fa {
+    padding: 6px;
+}
+.fa:hover{
+    color: #274BC8;
+}

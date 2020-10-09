@@ -1,0 +1,65 @@
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.col-2{
+    flex-basis: 50%;
+    min-width: 300px;
+}
+
+.col-2 img{
+    width: 90%;
+    padding: 30px;
+}
+
+.info{
+    padding-left: 100px;
+    padding-top: 80px;
+}
+
+h2{
+    font-size: 30px;
+}
+
+input[type=text],input[type=password]{
+   border: none;
+    outline: none;
+    border-bottom: 1px solid #dbd3d3;
+    padding: 15px 5px;
+    width: 100px;
+
+   
+
+}
+
+input[type=submit]{
+    outline: none;
+    color: white;
+   cursor: pointer;
+    background-color: #274BC8;
+    outline: none;
+    border-radius: 10px;
+    width: 140px;
+    height: 30px;
+}
+
+.media{
+    padding: 10px;
+}
+.media .fa{
+    display: inline;
+    padding: 5px;
+}
+.media .fa:hover{
+    color: #274BC8;
+}
+
+.move {
+    padding: 0px;
+}
+

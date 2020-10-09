@@ -1,14 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Table from './components/Table';
-import Navbar from './components/Navbar';
+import { BrowserRouter as Router,Switch,Route } from 'react-router-dom';
+import Login from './component/Login'
+import Signup from './component/Signup'
+
 
 function App() {
   return (
   <div>
-       <Table/>
-      <Navbar/>
+    <Router>
+       
+        <Switch>
+          <Route exact path='/login' component={Login}/>
+          <Route path='/signup' component={Signup}/>
+        </Switch>
+     </Router>
   </div>
   );
 }
