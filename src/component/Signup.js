@@ -80,7 +80,7 @@ function Signup() {
                        {/* </Link> */}
                        </div>
                        <br></br>
-                       <div  className='login-wrapper'>
+                       <div  >
                      Already have an account? <Link to='/login'>Login here</Link>
                       
                     </div>
