@@ -8,6 +8,7 @@ import Signup from './component/Signup'
 
 function App() {
   const [isLogin,setLoginState] =useState(false)
+  
   function handleLoginstate(state){
     setLoginState(state)
   }

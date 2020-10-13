@@ -13,8 +13,9 @@ export default function Navbar({isLogin,handleLoginstate}) {
                      <li className='nav-list'><Link to='/login' onClick={()=>handleLoginstate(false)}>Logout</Link></li>
                      :
                      <>
-                  <li className='nav-list'><Link to='/signup'>Signup</Link></li>
+                   <li className='nav-list'><Link to='/'>Home</Link></li>
                   <li className='nav-list'> <Link to='/login'>Login</Link></li>
+                  <li className='nav-list'><Link to='/signup'>Signup</Link></li>
                   </>
                    } 
                </ul>

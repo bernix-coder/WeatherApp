@@ -1,3 +1,16 @@
 .city-name,.country-name{
     margin-right: 50px;
 }
+
+
+.response{
+    margin: auto;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-left: 500px;
+
+}
+.response img{
+    width: 100px;
+    height: 100px;
+}

@@ -27,11 +27,11 @@ function Signup() {
        e.preventDefault()
         if(name && email && password){
             let thisUser= {name,email,password},
-           users= localStorage.getItem('users');
+           users= JSON.parse(localStorage.getItem('users'));
 
-           !users?users={}:users=JSON.parse(users)
+        //    !users && users={}
            users[name]=thisUser;
-        //    delete users[name];
+
 
             localStorage.setItem('users', JSON.stringify(users))
            setMsg('Successfully Signed up..You will be redirected to login page')
