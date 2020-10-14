@@ -8,9 +8,11 @@ import Signup from './component/Signup'
 
 function App() {
   const [isLogin,setLoginState] =useState(false)
+  const [username,setUsername] =useState("");
   
-  function handleLoginstate(state){
-    setLoginState(state)
+  function handleLoginstate(isLogin, username) {
+    setLoginState(isLogin);
+    setUsername(username);
   }
   return (
   <div>
@@ -18,7 +20,7 @@ function App() {
     <Router>
        <Navbar {...{handleLoginstate,isLogin}}/>
         <Switch>
-  <Route exact path='/' component={Homepage}/>
+          <Route exact path='/' component={()=> <Homepage isLogin={isLogin} username={username} />}/>
           <Route path='/signup' component={Signup}/>
           <Route path='/login' component={()=><Login handleLoginstate={handleLoginstate}/>}/>
         </Switch>

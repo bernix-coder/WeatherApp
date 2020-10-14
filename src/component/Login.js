@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import {Link, useHistory} from 'react-router-dom'
 import weather from '../images/weather.png'
 import '../styles/Login.css'
+
 function Login({handleLoginstate}) {
     
     const [userName, setUserName]=useState(''),
@@ -23,7 +24,7 @@ function Login({handleLoginstate}) {
          if(users !==null){
              let user =users[userName]
             if (user && user.password===password){
-                handleLoginstate(true)
+                handleLoginstate(true, user)
                 history.push('/')
             }
             else

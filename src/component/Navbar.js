@@ -10,7 +10,10 @@ export default function Navbar({isLogin,handleLoginstate}) {
                <ul className='nav-item'>
                    {
                      isLogin?  
-                     <li className='nav-list'><Link to='/login' onClick={()=>handleLoginstate(false)}>Logout</Link></li>
+                     <div>
+                     <li className='nav-list'><Link onClick={()=>handleLoginstate(false)}>Search History</Link></li>
+                     <li className='nav-list'><Link to='/login' onClick={()=>{}}>Logout</Link></li>
+                     </div>
                      :
                      <>
                    <li className='nav-list'><Link to='/'>Home</Link></li>
