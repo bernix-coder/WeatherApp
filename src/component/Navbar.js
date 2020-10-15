@@ -2,7 +2,7 @@ import React from 'react'
 import "../styles/Navbar.css"
 import {Link} from 'react-router-dom'
 
-export default function Navbar({isLogin,handleLoginstate}) {
+export default function Navbar({isLogin,handleLoginstate,getSearchHistory}) {
  
     return (
         <>
@@ -11,8 +11,8 @@ export default function Navbar({isLogin,handleLoginstate}) {
                    {
                      isLogin?  
                      <div>
-                     <li className='nav-list'><Link onClick={()=>handleLoginstate(false)}>Search History</Link></li>
-                     <li className='nav-list'><Link to='/login' onClick={()=>{}}>Logout</Link></li>
+                     <li className='nav-list'><Link onClick={getSearchHistory}>Search History</Link></li>
+                     <li className='nav-list'><Link to='/login' onClick={()=>{handleLoginstate(false)}}>Logout</Link></li>
                      </div>
                      :
                      <>

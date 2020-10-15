@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../styles/Homepage.css";
 import axios from "axios";
 
-function Homepage({isLogin,username}) {
+function Homepage({isLogin,username,history}) {
   const [cityName, setCityName] = useState(""),
     [weatherState, setWeatherState] = useState(null),
     [countryName, setCountryName] = useState("");
@@ -13,10 +13,11 @@ function Homepage({isLogin,username}) {
 
   function handleCountry(e) {
     setCountryName(e.target.value);
-  }
+  } 
 
   const savedSearchHistory = (search) => {
     // Check If User Is Logged In
+
     if (isLogin) {
       // Get Existing History
       const existingHistoryJSON = localStorage.getItem('searchHistory');
@@ -34,6 +35,7 @@ function Homepage({isLogin,username}) {
     }
   }
 
+
   const getWeather = () => {
     if (countryName && cityName)
       axios
@@ -42,7 +44,7 @@ function Homepage({isLogin,username}) {
         )
         .then((res) => {
           setWeatherState({ ...res.data });
-          savedSearchHistory(...res.data);
+          savedSearchHistory({countryName,cityName});
         })
         .catch((error) => {
           console.log(error);
@@ -82,6 +84,28 @@ function Homepage({isLogin,username}) {
           <h4>{ weatherState.current.weather_descriptions}</h4>
         </div>
       )}
+
+      {history && 
+      <table style={{width:200}}>
+          <thead>
+            <tr>
+              <th>City Name</th>
+              <th>Country Name</th>
+            </tr>
+          </thead>
+           <tbody>
+         
+             {history.map((h)=> 
+             <tr>
+              <td>{h.cityName}</td>
+             <td>{h.countryName}</td>
+             </tr>
+            )}
+          
+           </tbody>
+        </table>
+      
+      }
     </div>
   );
 }

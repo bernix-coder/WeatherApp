@@ -7,20 +7,30 @@ import Signup from './component/Signup'
 
 
 function App() {
+
+
   const [isLogin,setLoginState] =useState(false)
-  const [username,setUsername] =useState("");
+  const [authUser,setAuthUser] =useState("");
+  const [history, setHistory] =useState('')
   
-  function handleLoginstate(isLogin, username) {
+  function handleLoginstate(isLogin, user) {
     setLoginState(isLogin);
-    setUsername(username);
+    setAuthUser(user);
+  }
+  const getSearchHistory =()=>{
+    let results = JSON.parse(localStorage.getItem('searchHistory'));
+  // paln A (difficulty : easy)
+    // if(results!==null) setHistory(results[authUser.name])
+  // plan b (difficulty: High)
+    results && setHistory(results[authUser.name]) 
   }
   return (
   <div>
     
     <Router>
-       <Navbar {...{handleLoginstate,isLogin}}/>
+       <Navbar {...{handleLoginstate,getSearchHistory,isLogin}}/>
         <Switch>
-          <Route exact path='/' component={()=> <Homepage isLogin={isLogin} username={username} />}/>
+          <Route exact path='/' component={()=> <Homepage isLogin={isLogin} username={typeof authUser === "object" ?authUser.name:null} history={history} />}/>
           <Route path='/signup' component={Signup}/>
           <Route path='/login' component={()=><Login handleLoginstate={handleLoginstate}/>}/>
         </Switch>
